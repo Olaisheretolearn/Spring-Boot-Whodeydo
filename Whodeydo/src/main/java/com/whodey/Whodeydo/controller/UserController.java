@@ -19,14 +19,14 @@ import java.util.Optional;
 public class UserController {
 
     private final UserService userService;
-    private final PasswordEncoder passwordEncoder; // Add this
-    private final JwtUtil jwtUtil; // Add this
+    private final PasswordEncoder passwordEncoder; 
+    private final JwtUtil jwtUtil; 
 
     @Autowired
     public UserController(UserService userService, PasswordEncoder passwordEncoder, JwtUtil jwtUtil) {
         this.userService = userService;
         this.passwordEncoder = passwordEncoder; // Inject PasswordEncoder
-        this.jwtUtil = jwtUtil; // Inject JwtUtil
+        this.jwtUtil = jwtUtil; 
     }
 
     @GetMapping
@@ -83,8 +83,7 @@ public class UserController {
 
         User existingUser = existingUserOpt.get();
 
-        user.setId(id); // Use setId instead of setUserId
-
+        user.setId(id); 
         // Retain the existing dateJoined if not provided
         if (user.getDateJoined() == null) {
             user.setDateJoined(existingUser.getDateJoined());
