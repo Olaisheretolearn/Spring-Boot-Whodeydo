@@ -32,7 +32,6 @@ public class UserDTO {
     @Size(max = 255, message = "Profile picture URL should not exceed 255 characters")
     private String profilePicture;
 
-    private String dateJoined;  // Can be sent as a formatted string (optional)
+    private String dateJoined;  
 
-    // This DTO excludes sensitive fields like the hashed password to keep it secure when sending data out.
 }
