@@ -25,10 +25,10 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable()) // Updated method to disable CSRF
                 .authorizeRequests()
-                .requestMatchers("/api/users/register", "/api/users/login").permitAll() // Allow public access to these endpoints
+                .requestMatchers("/api/users/register", "/api/users/login").permitAll()
                 .anyRequest().authenticated() // All other requests need authentication
                 .and()
-                .authenticationProvider(jwtAuthenticationProvider()); // Add the JWT authentication provider
+                .authenticationProvider(jwtAuthenticationProvider());
 
         return http.build();
     }
